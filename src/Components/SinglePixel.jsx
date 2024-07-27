@@ -1,10 +1,13 @@
 import { useState } from "react";
 export default function SinglePixel(){
-    const [tex,setTex]=useState("hello");
+    const [tex,setTex]=useState(Array.from({ length: 5 }, () =>
+        Array.from({ length: 3 }, () => 5)
+    ));
     function handleclick(){
+        console.log('hjhk');
         setTex((pre)=>{
-            pre=pre+'world';
-            return pre;
+            pre.pop();
+            return [...pre];
         });
     }
     return(

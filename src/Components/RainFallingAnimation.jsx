@@ -17,7 +17,7 @@ export default function RainFallingAnimation() {
         if(w==0){
             z=curr.substring(1,3);
             z=parseInt(z,16);
-            z+=10;
+            z+=25;
             z%=255;
             z=Math.floor(z);
             z=z.toString(16).toLocaleUpperCase();
@@ -30,7 +30,7 @@ export default function RainFallingAnimation() {
         else if(w==1){
             z=curr.substring(3,5);
             z=parseInt(z,16);
-            z+=10;
+            z+=25;
             z%=255;
             z=Math.floor(z);
             z=z.toString(16).toLocaleUpperCase();
@@ -43,7 +43,7 @@ export default function RainFallingAnimation() {
         else if(w==2){
             z=curr.substring(5,7);
             z=parseInt(z,16);
-            z+=10;
+            z+=25;
             z%=255;
             z=Math.floor(z);
             z=z.toString(16).toLocaleUpperCase();
@@ -57,15 +57,15 @@ export default function RainFallingAnimation() {
             pre[0].map((cell,index)=>{
                 let r=cell.substring(1,3);
                 r=parseInt(r,16);
-                r/=1.2;
+                r/=1.3;
                 r=Math.floor(r);
                 let g=cell.substring(3,5);
                 g=parseInt(g,16);
-                g/=1.2;
+                g/=1.3;
                 g=Math.floor(g);
                 let b=cell.substring(5,7);
                 b=parseInt(b,16);
-                b/=1.2;
+                b/=1.3;
                 b=Math.floor(b);
                 r=r.toString(16).toLocaleUpperCase();
                 g=g.toString(16).toLocaleLowerCase();
@@ -82,7 +82,7 @@ export default function RainFallingAnimation() {
             t[y]=curr;
             pre.unshift(t);
             pre.pop();
-            return  [...pre];
+            return  [...pre.map(p=>[...p])];
         })
     }
 	return (
@@ -102,7 +102,8 @@ export default function RainFallingAnimation() {
 					))}
 				</>
 			))}
-			<button onClick={handleclick}>click me</button>
+			{/* <button onClick={handleclick}>click me</button> */}
+            {setTimeout(handleclick,250)}
 		</>
 	);
 }
