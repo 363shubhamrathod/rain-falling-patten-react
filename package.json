@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://363shubhamrathod.github.io/rain-falling-patten-react.github.io",
+  "homepage": "https://363shubhamrathod.github.io/rain-falling-patten-react",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
